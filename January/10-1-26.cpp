@@ -18,14 +18,14 @@ public:
         //agr i out of bound ho gaya,
         //to j ka bacha kisi kaam ka ni just add as ascii
         if(i>=m){
-            return s2[j] + solve(i,j+1,s1,s2);
+            return dp[i][j] = s2[j] + solve(i,j+1,s1,s2);
         }
         else if(j>=n){
-            return s1[i] + solve(i+1,j,s1,s2);
+            return dp[i][j] = s1[i] + solve(i+1,j,s1,s2);
         }
 
         if(s1[i] == s2[j]){
-            return solve(i+1,j+1,s1,s2);
+            return dp[i][j] = solve(i+1,j+1,s1,s2);
         }
 
         // two possibilites
